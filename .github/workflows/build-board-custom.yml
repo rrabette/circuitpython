@@ -41,6 +41,7 @@ jobs:
     - name: Set up repository
       run: |
         git clone --filter=tree:0 https://github.com/adafruit/circuitpython.git $GITHUB_WORKSPACE
+        make fetch-tags
     - name: Checkout head / tag
       env:
         TAG: ${{ inputs.version == 'latest' && 'HEAD' || inputs.version }}
